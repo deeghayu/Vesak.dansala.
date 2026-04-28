@@ -3,37 +3,78 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>වෙසක් දන්සල 2026</title>
+    <title>වෙසක් දන්සල 2026 | Ziyumi Beatz</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <div class="overlay"></div>
+    <div class="stars"></div>
 
     <header>
         <div class="lantern-container">
             <div class="lantern">🏮</div>
             <div class="lantern">🏮</div>
         </div>
-        <h1>ශ්‍රී වෙසක් මංගල්‍යය - දන්සල</h1>
+        <h1>ශ්‍රී වෙසක් මංගල්‍යය</h1>
         <p class="wish">සියලු සත්වයෝ නිදුක් වෙත්වා!</p>
     </header>
 
     <main>
-        <section class="info-card">
-            <h2>දන්සල පිළිබඳ විස්තර</h2>
-            <div class="details">
-                <p><strong>ආහාර වර්ගය:</strong> බත් දන්සල</p>
-                <p><strong>දිනය:</strong> 2026 මැයි 1 වනදා (වෙසක් පෝය දින)</p>
-                <p><strong>ස්ථානය:</strong> පිළියන්දල හංදිය අසල</p>
+        <section class="video-section">
+            <div class="video-wrapper">
+                <iframe src="https://www.youtube.com/embed/S2636G6fF_0?autoplay=1&mute=1&loop=1&playlist=S2636G6fF_0" 
+                    frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+                </iframe>
             </div>
-            <button class="map-btn">ස්ථානය සිතියමෙන් බලන්න</button>
+        </section>
+
+        <section class="info-card">
+            <h2>බත් දන්සල - පිළියන්දල</h2>
+            <div class="details">
+                <p><strong>ස්ථානය:</strong> පිළියන්දල නගරය මධ්‍යයේ</p>
+                <p><strong>දිනය:</strong> 2026 මැයි 01 (වෙසක් පෝය දින)</p>
+                <p><strong>කාලය:</strong> සවස 6:00 සිට...</p>
+            </div>
+            <button class="map-btn" onclick="window.open('https://maps.google.com', '_blank')">Location එක බලන්න</button>
+        </section>
+
+        <section class="info-card">
+            <h3>වෙසක් පෝය උදාවට තව</h3>
+            <div id="countdown">
+                <div><span id="days">00</span>දින</div>
+                <div><span id="hours">00</span>පැය</div>
+                <div><span id="minutes">00</span>මිනිත්තු</div>
+                <div><span id="seconds">00</span>තත්පර</div>
+            </div>
         </section>
     </main>
 
     <footer>
-        <p>නිර්මාණය: Ziyumi Beatz</p>
+        <p>නිර්මාණය: <b>Ziyumi Beatz</b> | 2026</p>
     </footer>
 
+    <script>
+        // Countdown Timer Script
+        const vesakDate = new Date("May 1, 2026 00:00:00").getTime();
+        const x = setInterval(function() {
+            const now = new Date().getTime();
+            const distance = vesakDate - now;
+
+            const d = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const h = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const m = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const s = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById("days").innerHTML = d;
+            document.getElementById("hours").innerHTML = h;
+            document.getElementById("minutes").innerHTML = m;
+            document.getElementById("seconds").innerHTML = s;
+
+            if (distance < 0) {
+                clearInterval(x);
+                document.getElementById("countdown").innerHTML = "වෙසක් පෝය උදා වී ඇත!";
+            }
+        }, 1000);
+    </script>
 </body>
 </html>
