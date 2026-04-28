@@ -1,0 +1,65 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #1a1a2e; /* තද නිල් පසුබිමක් */
+    color: white;
+    text-align: center;
+}
+
+header {
+    padding: 50px 20px;
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('vesak-bg.jpg'); /* මhttps://publicholidays.com.my/wesak-day/ */
+    background-size: cover;
+}
+
+h1 {
+    font-size: 3rem;
+    color: #ffcc00; /* රන්වන් පැහැය */
+    text-shadow: 2px 2px 10px rgba(255, 204, 0, 0.7);
+}
+
+.wish {
+    font-size: 1.5rem;
+    font-style: italic;
+    color: #f1c40f;
+}
+
+.info-card {
+    background: rgba(255, 255, 255, 0.1);
+    margin: 20px auto;
+    padding: 30px;
+    width: 80%;
+    max-width: 500px;
+    border-radius: 15px;
+    border: 1px solid #ffcc00;
+    box-shadow: 0 0 20px rgba(255, 204, 0, 0.2);
+}
+
+.map-btn {
+    background: #e67e22;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.map-btn:hover {
+    background: #d35400;
+    transform: scale(1.05);
+}
+
+/* සරල Animation එකක් */
+@keyframes glow {
+    from { opacity: 0.5; }
+    to { opacity: 1; }
+}
+
+.lantern {
+    font-size: 40px;
+    display: inline-block;
+    animation: glow 1.5s infinite alternate;
+}
